@@ -1,6 +1,6 @@
 class Account:
     """
-    Class that generates new instances of accounts
+    Class to generates new instances of accounts
     """
 
     pass
