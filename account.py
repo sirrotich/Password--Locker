@@ -7,6 +7,7 @@ class Account:
 
     account_list = [] # Empty account list
 
+
     def __init__(self,account_name,user_name,password,):
 
       # docstring removed for simplicity
