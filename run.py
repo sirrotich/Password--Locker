@@ -190,8 +190,7 @@ def main():
                         elif inst == 'dl':
                                 print("\t\t\t\t\tenter the account name of credential you want to delete")
                                 credentials_name = input()
-                                # del_credentials = (create_credentials(credentials_name, usr_name,))
-                                # delete_credentials(del_credentials)
+                                
                         
 
                         elif inst == "ex":
@@ -209,8 +208,9 @@ def main():
         elif inst == "LO":
                     print(f"\t\t\t\t\tThanks {user_name} for your time.I hope you enjoyed my service.Bye...")
                     break
+
         else:
-                    print("\t\t\t\t\tI really didn't get that. Please use the instructions given")     
+                    print("\t\t\t\tI really didn't get that. Please use the instructions given")     
 
         
 
