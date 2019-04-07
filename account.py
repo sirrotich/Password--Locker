@@ -34,6 +34,7 @@ class Account:
 
         Account.account_list.remove(self)
 
+
     @classmethod
     def find_by_password(cls,password):
         '''
@@ -48,6 +49,7 @@ class Account:
         for account in cls.account_list:
             if account.phone_password == password:
                 return account
+
 
     @classmethod
     def account_exist(cls,password):
