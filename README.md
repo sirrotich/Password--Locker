@@ -26,7 +26,9 @@ xclip
 ## cloning
 
 in your terminal run:
+
 $git clone https://github.com/sirrotich/Password--Locker.git
+
 $cd password--locker
 
 ## Running the application
