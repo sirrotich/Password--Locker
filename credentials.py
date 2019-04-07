@@ -18,15 +18,15 @@ class Credentials:
 
         Credentials.credentials_list.append(self)    
 
-    # @classmethod
-    # def delete_credentials(self):
+    @classmethod
+    def delete_credentials(self):
 
-    #     '''
-    #     delete_credentials method deletes a saved credentials from the credentials_list
-    #     '''
-    #     for credentials in cls.credentials_list:
-    #         if credentials.credentials_name == name:
-    #             return credentials_list.remove(self)  
+        '''
+        delete_credentials method deletes a saved credentials from the credentials_list
+        '''
+        for credentials in cls.credentials_list:
+            if credentials.credentials_name == name:
+                return credentials_list.remove(self)  
 
 
     # @classmethod
