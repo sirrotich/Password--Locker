@@ -2,6 +2,7 @@ import unittest # Importing the unittest module
 from account import Account # Importing the account class
 import pyperclip #Allows copy and pasting
 
+
 class TestAccount(unittest.TestCase):
 
     '''
