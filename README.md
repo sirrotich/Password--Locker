@@ -36,6 +36,17 @@ $cd password--locker
   $ chmod +x password_locker.py
   $ ./password_locker.py
 
+## How it works
+## user first creates an account 
+
+![Screenshot from 2019-04-07 17-55-17](https://user-images.githubusercontent.com/47354971/55738391-b8172c80-5a2f-11e9-81de-4872bbbcb5a4.png)
+
+## They can now log-in and save thier details
+
+![Screenshot from 2019-04-07 17-56-02](https://user-images.githubusercontent.com/47354971/55738478-ded56300-5a2f-11e9-9af6-02e449841c88.png)
+
+
+
 ## Technologies used
 
 python3.6
