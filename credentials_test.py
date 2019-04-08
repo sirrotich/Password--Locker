@@ -88,7 +88,14 @@ class TestCredentials(unittest.TestCase):
         credentials_exists = Credentials.credentials_exist("0711223344")
         self.assertTrue(credentials_exists)    
         
-                       
+    def test_copy_usr_name(self):
+        '''
+        Test to confirm we copying usr name 
+        '''
+        self.new_credentials.save_credentials()
+        Credentials.copy_usr_name("Test")
+
+        self.assertEqual(self.new_credentials.usr_name,pyperclip.paste())
 
 
 if __name__ == '__main__':

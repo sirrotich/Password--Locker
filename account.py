@@ -1,4 +1,4 @@
-import pyperclip #Allows copy  and pasting
+# import pyperclip #Allows copy  and pasting
 ## if the pyperclip module not working  run this command-----sudo apt-get install xclip-----
 class Account:
     """
@@ -8,7 +8,7 @@ class Account:
     account_list = [] # Empty account list
 
 
-    def __init__(self,account_name,user_name,password,):
+    def __init__(self,account_name,user_name,password):
 
       # docstring removed for simplicity
 

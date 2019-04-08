@@ -1,6 +1,7 @@
 #!/usr/bin/env python3.6
 from credentials  import Credentials
 from account  import Account
+import random
 
 def create_account(aname, uname,phone):
     '''
@@ -16,11 +17,6 @@ def save_accounts(account):
     '''
     account.save_account()
 
-# def del_account(account):
-#     '''
-#     Function to delete account
-#     '''
-#     account.delete_account()
 
 def find_account(password):
     '''
@@ -61,7 +57,7 @@ def del_credentials(credentials):
     '''
     Function to delete a account
     '''
-    credentials.delete_credentials()    
+    credentials.delete_credentials(usr_name)    
 
 
 def find_credentials(name):
@@ -82,13 +78,19 @@ def display_credentials():
     '''
     return Credentials.display_credentials() 
 
+def copy_credentials():
+
+    '''
+    Function to copy and paste
+    '''
+    return Credentials.copy_credential(credential_name)
 
 def main():
     print("                                     \033[1;34;40m")
     print("                                     *" * 20)
     print("                                      MAKE YOUR DOCS SAFE WITH PASSWORD LOCKER")
     print("                                     *" * 20)
-    print("                                     \033[1;34;40m \n")
+    print("                                     \033[1;34;40m")
     print("                                     \033[1;37;1m")
 
     print("To continue tell me your name!") 
@@ -157,7 +159,8 @@ def main():
                         CA -> Create new credential.
                         DC -> Display your credentials list
                         ex ->Log out your credentials account
-                        DL ->Delete credential.''')
+                        DL ->Delete credential
+                        COP ->Copy credential.''')
                         print("\033[1;35;40m    \n")
 
                         inst = input().lower()
@@ -169,10 +172,20 @@ def main():
                                 usr_name = input(f"{credentials_name} user name:")
                                 print('\n')
                                 print('\t\t\t\t\t*' * 20)
-                                pwd = input(f"{credentials_name} password:")
 
-                                save_credentials(create_credentials(credentials_name,u_name,pwd))
-                                print('\n')
+                                while True:
+                                        print('Please choose \n mp- my pass, gp - generate')
+                                        short_code = input().lower()
+                                        if short_code == 'mp':
+                                                print("cred pass:")
+                                                password = input(f"{credentials_name} password:")
+                                                break
+                                        elif short_code == 'gp':
+                                                chars = "abcdefghijklmnopqrstuvwxyz1234567890"
+                                                password = "".join(random.choice(chars) for _ in range(10))
+                                                break
+
+                                save_credentials(create_credentials(credentials_name,u_name,password))
                                 print(f"\t\t\t\tA New {credentials_name} Account with the user name  {usr_name} has been created.")
                                 print ('\n')
                         elif inst == 'dc':
@@ -189,9 +202,17 @@ def main():
 
                         elif inst == 'dl':
                                 print("\t\t\t\t\tenter the account name of credential you want to delete")
-                                credentials_name = input()
+                                deleted_account = input()
+                                if del_credentials(deleted_account):
+                                        del_credentials(deleted_account)
                                 
-                        
+
+                        elif inst == 'cop':
+                                print(' ')
+                                credential_name = input('Enter the cridentials name for the credential password to copy: ')
+                                copy_credential(credential_name)
+                                print('')
+        
 
                         elif inst == "ex":
                                 print('\n')

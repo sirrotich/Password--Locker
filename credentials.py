@@ -1,3 +1,4 @@
+import pyperclip  #This allows you copy and paste a given text-unit 
 class Credentials:
     """
     Class that generates new instances of users.
@@ -59,3 +60,7 @@ class Credentials:
         '''
         return cls.credentials_list            
                       
+    @classmethod
+    def copy_usr_name(cls,number):
+        credentials_found = Credentials.find_by_name(name)
+        pyperclip.copy(contact_found.usr_name)
